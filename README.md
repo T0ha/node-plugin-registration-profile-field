@@ -1,7 +1,7 @@
 # Question and Answer plugin for the NodeBB registration form
 
-A really simple plugin that adds a field to your registration page to help prevent spammers. Set your question and answer in the ACP.
+A really simple plugin that adds a field to your registration page to fill in some data from profile during registration
 
 ## Installation
 
-    npm install nodebb-plugin-registration-question
+    npm install nodebb-plugin-registration-profile-field
