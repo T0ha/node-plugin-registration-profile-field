@@ -52,7 +52,8 @@ plugin.checkRegister = function(params, callback) {
 };
 
 function renderAdmin(req, res, next) {
-	res.render('admin/registration-profile-field', {});
+		var fields = ['website', 'location', 'birthday', 'signature', 'aboutme'];
+	res.render('admin/registration-profile-field', {fields:fields});
 }
 
 module.exports = plugin;
