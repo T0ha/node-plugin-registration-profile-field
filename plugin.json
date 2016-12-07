@@ -1,0 +1,31 @@
+{
+	"id": "nodebb-plugin-registration-question",
+	"name": "Registration Question",
+	"description": "Question and Answer plugin for the registration form",
+	"url": "https://github.com/NodeBB/nodebb-plugin-registration-question",
+	"library": "./library.js",
+	"hooks": [
+		{
+			"hook": "static:app.load", "method": "init"
+		},
+		{
+			"hook": "filter:admin.header.build", "method": "addAdminNavigation"
+		},
+		{
+			"hook": "filter:register.build", "method": "addCaptcha"
+		},
+		{
+			"hook": "filter:register.check", "method": "checkRegister"
+		}
+	],
+	"staticDirs": {
+		"static": "./static"
+	},
+	"less": [
+		"static/style.less"
+	],
+	"scripts": [
+		"static/lib/main.js"
+	],
+	"templates": "static/templates"
+}
