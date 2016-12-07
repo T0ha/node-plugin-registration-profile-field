@@ -1,8 +1,8 @@
 {
-	"id": "nodebb-plugin-registration-question",
-	"name": "Registration Question",
-	"description": "Question and Answer plugin for the registration form",
-	"url": "https://github.com/NodeBB/nodebb-plugin-registration-question",
+	"id": "nodebb-plugin-registration-profile-field",
+	"name": "Registration Profile Data Field",
+	"description": "Add a field to user registration page to input additional profile data",
+	"url": "https://github.com/T0ha/nodebb-plugin-registration-profile-field",
 	"library": "./library.js",
 	"hooks": [
 		{
