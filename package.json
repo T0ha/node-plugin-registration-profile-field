@@ -1,88 +1,25 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "nodebb-plugin-registration-question",
-        "scope": null,
-        "escapedName": "nodebb-plugin-registration-question",
-        "name": "nodebb-plugin-registration-question",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
-      },
-      "/Users/ins/Documents/projects/my/antclub/NodeBB"
-    ]
-  ],
-  "_from": "nodebb-plugin-registration-question@latest",
-  "_id": "nodebb-plugin-registration-question@0.1.8",
-  "_inCache": true,
-  "_location": "/nodebb-plugin-registration-question",
-  "_nodeVersion": "0.12.7",
-  "_npmUser": {
-    "name": "psychobunny",
-    "email": "psycho.bunny@hotmail.com"
-  },
-  "_npmVersion": "2.11.3",
-  "_phantomChildren": {},
-  "_requested": {
-    "raw": "nodebb-plugin-registration-question",
-    "scope": null,
-    "escapedName": "nodebb-plugin-registration-question",
-    "name": "nodebb-plugin-registration-question",
-    "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
-  },
-  "_requiredBy": [
-    "#USER"
-  ],
-  "_resolved": "https://registry.npmjs.org/nodebb-plugin-registration-question/-/nodebb-plugin-registration-question-0.1.8.tgz",
-  "_shasum": "21f47150d21654eb6fce8a1e779ca2b346e491ba",
-  "_shrinkwrap": null,
-  "_spec": "nodebb-plugin-registration-question",
-  "_where": "/Users/ins/Documents/projects/my/antclub/NodeBB",
-  "author": {
-    "name": "psychobunny",
-    "email": "psycho.bunny@hotmail.com"
-  },
-  "bugs": {
-    "url": "https://github.com/psychobunny/nodebb-plugin-registration-question/issues"
-  },
-  "dependencies": {},
-  "description": "Question and Answer plugin for the NodeBB registration form",
-  "devDependencies": {},
-  "directories": {},
-  "dist": {
-    "shasum": "21f47150d21654eb6fce8a1e779ca2b346e491ba",
-    "tarball": "https://registry.npmjs.org/nodebb-plugin-registration-question/-/nodebb-plugin-registration-question-0.1.8.tgz"
-  },
-  "gitHead": "edee5284c57d99e6caf7289452bdbfc964c666da",
-  "homepage": "https://github.com/psychobunny/nodebb-plugin-registration-question#readme",
-  "keywords": [
-    "nodebb",
-    "plugin",
-    "registration",
-    "spam",
-    "question"
-  ],
-  "license": "BSD-2-Clause",
+  "name": "nodebb-plugin-registration-profile-field",
+  "version": "0.0.1",
+  "description": "Add a field to user registration page to input additional profile data",
   "main": "library.js",
-  "maintainers": [
-    {
-      "name": "psychobunny",
-      "email": "psycho.bunny@hotmail.com"
-    }
-  ],
-  "name": "nodebb-plugin-registration-question",
-  "nbbpm": {
-    "compatibility": "^0.7.0 || ^0.8.0"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/psychobunny/nodebb-plugin-registration-question.git"
+    "url": "git+https://github.com/T0ha/node-plugin-registration-profile-field.git"
   },
-  "scripts": {},
-  "version": "0.1.8"
+  "keywords": [
+    "NodeBB",
+    "plugin",
+    "registration",
+    "profile"
+  ],
+  "author": "Anton Shvein <t0hashvein@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/T0ha/node-plugin-registration-profile-field/issues"
+  },
+  "homepage": "https://github.com/T0ha/node-plugin-registration-profile-field#readme"
 }
