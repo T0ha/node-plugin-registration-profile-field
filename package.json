@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/T0ha/node-plugin-registration-profile-field/issues"
   },
-  "homepage": "https://github.com/T0ha/node-plugin-registration-profile-field#readme"
+  "homepage": "https://github.com/T0ha/node-plugin-registration-profile-field#readme",
+  "nbbpm": {
+      "compatibility": "^1.2.1 || ^1.4.1"
+  }
 }
