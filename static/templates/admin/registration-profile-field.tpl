@@ -8,7 +8,7 @@
 	<div class="alert alert-info">
 		<p>
 			<label for="Question">Question</label>
-            <select id="profile-field-select">
+            <select data-field="registration-profile-field:question">
                 <!-- BEGIN fields -->
                 <option value="@value">@value</option>
                 <!-- END fields -->

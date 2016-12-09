@@ -1,6 +1,13 @@
 "use strict";
 
 var plugin = {},
+    fields = [ 
+        'website',
+        'location',
+        'birthday',
+        'signature',
+        'aboutme'
+    ],
 	meta = module.parent.require('./meta');
 
 plugin.init = function(params, callback) {
@@ -25,11 +32,16 @@ plugin.addAdminNavigation = function(header, callback) {
 };
 
 plugin.addCaptcha = function(params, callback) {
-	var question = meta.config['registration-profile-field:question'];
+	var field = meta.config['registration-profile-field:question'];
+    if (field === 'aboutme') {
+        var html = '<textarea class="form-control" name="registration-profile-field" id="registration-profile-field"></textarea>';
+    } else {
+        var html = '<input class="form-control" name="registration-profile-field" id="registration-profile-field" />';
+    }
 
 	var captcha = {
-		label: 'Registration Question',
-		html: '<div class="well"><strong>' + question + '</strong><br /><input class="form-control" name="registration-profile-field" id="registration-profile-field" /></div>'
+        label: '[[user:' + field + ']]',
+		html: html
 	};
 
 	if (params.templateData.regFormEntry && Array.isArray(params.templateData.regFormEntry)) {
@@ -41,18 +53,18 @@ plugin.addCaptcha = function(params, callback) {
 	callback(null, params);
 };
 
-plugin.checkRegister = function(params, callback) {
-	var answer = meta.config['registration-profile-field:answer'];
+plugin.createUser = function(params, callback) {
+	var field = meta.config['registration-profile-field:question'];
+    var fieldData = params.data['registration-profile-field'];
+    var userData = params.user;
+    userData[field] = fieldData;
+    /* if (!field || !fieldData) {
+        callback(*/
+    callback(null, userData);
 
-	if (answer.toLowerCase() !== params.req.body['registration-profile-field'].toLowerCase()) {
-		callback({source: 'registration-profile-field', message: 'wrong-answer'}, params);
-	} else {
-		callback(null, params);
-	}
 };
 
 function renderAdmin(req, res, next) {
-		var fields = ['website', 'location', 'birthday', 'signature', 'aboutme'];
 	res.render('admin/registration-profile-field', {fields:fields});
 }
 
