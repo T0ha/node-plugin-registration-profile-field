@@ -58,8 +58,6 @@ plugin.createUser = function(params, callback) {
     var fieldData = params.data['registration-profile-field'];
     var userData = params.user;
     userData[field] = fieldData;
-    /* if (!field || !fieldData) {
-        callback(*/
     callback(null, userData);
 
 };
