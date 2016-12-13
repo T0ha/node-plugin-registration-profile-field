@@ -42,7 +42,6 @@ plugin.customHeaders = function(headers, callback) {
 };
 
 plugin.customFields = function(params, callback) {
-    console.log(params.users[0]);
 	var field = meta.config['registration-profile-field:question'];
     var users = params.users.map(function(user) {
         if (!user.customRows) {
@@ -52,7 +51,6 @@ plugin.customFields = function(params, callback) {
         return user;
     });
 
-    console.log(users);
     callback(null, {users: users});
 };
 
