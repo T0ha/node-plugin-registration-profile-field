@@ -8,6 +8,7 @@ var plugin = {},
         'signature',
         'aboutme'
     ],
+    User = module.parent.require('./user'),
 	meta = module.parent.require('./meta');
 
 plugin.init = function(params, callback) {
@@ -29,6 +30,30 @@ plugin.addAdminNavigation = function(header, callback) {
 	});
 
 	callback(null, header);
+};
+
+plugin.customHeaders = function(headers, callback) {
+	var field = meta.config['registration-profile-field:question'];
+    headers.headers.push({
+        label: '[[user:' + field + ']]',
+    });
+
+    callback(null, headers);
+};
+
+plugin.customFields = function(params, callback) {
+    console.log(params.users[0]);
+	var field = meta.config['registration-profile-field:question'];
+    var users = params.users.map(function(user) {
+        if (!user.customRows) {
+            user.customRows = [];
+        }
+        user.customRows.push({value: user[field]});
+        return user;
+    });
+
+    console.log(users);
+    callback(null, {users: users});
 };
 
 plugin.addCaptcha = function(params, callback) {
@@ -62,6 +87,14 @@ plugin.createUser = function(params, callback) {
 
 };
 
+plugin.addToApprovalQueue = function(params, callback) {
+	var field = meta.config['registration-profile-field:question'];
+    var fieldData = params.userData['registration-profile-field'];
+    var userData = params.data;
+    userData[field] = fieldData;
+    callback(null, {data: userData});
+
+};
 function renderAdmin(req, res, next) {
 	res.render('admin/registration-profile-field', {fields:fields});
 }

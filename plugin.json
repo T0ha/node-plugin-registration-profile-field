@@ -13,10 +13,19 @@
 		},
 		{
 			"hook": "filter:register.build", "method": "addCaptcha"
-		},
+        },
+        {
+            "hook": "filter:admin.registrationQueue.customHeaders", "method": "customHeaders"
+        },
+        {
+            "hook": "filter:user.getRegistrationQueue", "method": "customFields"
+        },
 		{
 			"hook": "filter:user.create", "method": "createUser"
-		}
+        },
+        {
+		"hook": "filter:user.addToApprovalQueue", "method": "addToApprovalQueue"
+        }
 	],
 	"staticDirs": {
 		"static": "./static"
