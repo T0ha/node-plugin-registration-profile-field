@@ -78,9 +78,10 @@ plugin.addCaptcha = function(params, callback) {
 
 plugin.createUser = function(params, callback) {
 	var field = meta.config['registration-profile-field:question'];
-    var fieldData = params.data['registration-profile-field'];
+    var fieldData = params.data[field] || params.data['registration-profile-field'];
     var userData = params.user;
-    userData[field] = fieldData;
+    if (!userData[field] && fieldData && fieldData != "") 
+        userData[field] = fieldData;
     callback(null, userData);
 
 };
