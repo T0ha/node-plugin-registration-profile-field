@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/T0ha/node-plugin-registration-profile-field#readme",
   "nbbpm": {
-    "compatibility": "^1.2.1 || ^1.4.1"
+    "compatibility": "^1.1.0 || ^1.2.0 || ^1.4.0"
   }
 }
