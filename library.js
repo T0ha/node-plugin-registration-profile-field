@@ -33,7 +33,7 @@ plugin.addAdminNavigation = function(header, callback) {
 };
 
 plugin.customHeaders = function(headers, callback) {
-	var field = meta.config['registration-profile-field:question'];
+	var field = meta.config['registration-profile-field:field'];
     headers.headers.push({
         label: '[[user:' + field + ']]',
     });
@@ -42,7 +42,7 @@ plugin.customHeaders = function(headers, callback) {
 };
 
 plugin.customFields = function(params, callback) {
-	var field = meta.config['registration-profile-field:question'];
+	var field = meta.config['registration-profile-field:field'];
     var users = params.users.map(function(user) {
         if (!user.customRows) {
             user.customRows = [];
@@ -55,7 +55,11 @@ plugin.customFields = function(params, callback) {
 };
 
 plugin.addCaptcha = function(params, callback) {
-	var field = meta.config['registration-profile-field:question'];
+	var field = meta.config['registration-profile-field:field'];
+    if (field == "") {
+        callback(null, params);
+        return;
+    }
     if (field === 'aboutme') {
         var html = '<textarea class="form-control" name="registration-profile-field" id="registration-profile-field"></textarea>';
     } else {
@@ -77,7 +81,7 @@ plugin.addCaptcha = function(params, callback) {
 };
 
 plugin.createUser = function(params, callback) {
-	var field = meta.config['registration-profile-field:question'];
+	var field = meta.config['registration-profile-field:field'];
     var fieldData = params.data[field] || params.data['registration-profile-field'];
     var userData = params.user;
     if (!userData[field] && fieldData && fieldData != "") 
@@ -87,7 +91,7 @@ plugin.createUser = function(params, callback) {
 };
 
 plugin.addToApprovalQueue = function(params, callback) {
-	var field = meta.config['registration-profile-field:question'];
+	var field = meta.config['registration-profile-field:field'];
     var fieldData = params.userData['registration-profile-field'];
     var userData = params.data;
     userData[field] = fieldData;

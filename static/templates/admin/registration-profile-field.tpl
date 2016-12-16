@@ -9,6 +9,7 @@
 		<p>
 			<label for="Question">Question</label>
             <select data-field="registration-profile-field:question" class="profile-field-select">
+                <option value="">Nothing</option>
                 <!-- BEGIN fields -->
                 <option value="@value">@value</option>
                 <!-- END fields -->
