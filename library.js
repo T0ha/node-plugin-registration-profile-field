@@ -56,6 +56,7 @@ plugin.customFields = function(params, callback) {
 
 plugin.addCaptcha = function(params, callback) {
 	var field = meta.config['registration-profile-field:field'];
+    console.log("Field: " + field);
     if (field == "") {
         callback(null, params);
         return;
