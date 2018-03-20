@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-registration-profile-field",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Add a field to user registration page to input additional profile data",
   "main": "library.js",
   "scripts": {
