@@ -87,7 +87,8 @@ plugin.createUser = function(params, callback) {
     var userData = params.user;
     if (!userData[field] && fieldData && fieldData != "") 
         userData[field] = fieldData;
-    callback(null, userData);
+    params.user = userData
+    callback(null, params);
 
 };
 

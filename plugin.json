@@ -36,5 +36,5 @@
 	"scripts": [
 		"static/lib/main.js"
 	],
-	"templates": "static/templates"
+	"templates": "./static/templates"
 }
