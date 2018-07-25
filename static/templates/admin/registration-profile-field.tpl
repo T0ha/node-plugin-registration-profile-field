@@ -7,7 +7,7 @@
 	</p><br />
 	<div class="alert alert-info">
 		<p>
-			<label for="Question">Question</label>
+			<label for="Question">Question</label><br/>
             <select data-field="registration-profile-field:field" class="profile-field-select">
                 <option value="">Nothing</option>
                 <!-- BEGIN fields -->
@@ -15,6 +15,9 @@
                 <!-- END fields -->
             </select>
 
+		</p><p>
+			<label for="Description">Description</label>
+            <textarea data-field="registration-profile-field:description" class="profile-field-textarea"></textarea>
 		</p>
 	</div>
 </form>

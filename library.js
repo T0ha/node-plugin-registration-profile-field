@@ -56,15 +56,16 @@ plugin.customFields = function(params, callback) {
 
 plugin.addCaptcha = function(params, callback) {
 	var field = meta.config['registration-profile-field:field'];
+	var comment = meta.config['registration-profile-field:description'];
     console.log("Field: " + field);
     if (field == "") {
         callback(null, params);
         return;
     }
     if (field === 'aboutme') {
-        var html = '<textarea class="form-control" name="registration-profile-field" id="registration-profile-field"></textarea>';
+        var html = '<textarea class="form-control" name="registration-profile-field" id="registration-profile-field"></textarea><span class="help-block">' + comment + '</span>';
     } else {
-        var html = '<input class="form-control" name="registration-profile-field" id="registration-profile-field" />';
+        var html = '<input class="form-control" name="registration-profile-field" id="registration-profile-field" /><span class="help-block">' + comment + '</span>';
     }
 
 	var captcha = {
